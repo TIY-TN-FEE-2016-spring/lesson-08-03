@@ -14,6 +14,7 @@ Router.map(function() {
     this.route('doors');
     this.route('tornado');
   });
+  this.route('logout');
 });
 
 export default Router;
