@@ -10,6 +10,7 @@ Router.map(function() {
     this.route('sign-up');
     this.route('login');
   });
+  this.route('arcade');
 });
 
 export default Router;
