@@ -1,0 +1,17 @@
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+.light-bar {
+  display: flex;
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    width: 4rem;
+    text-align: center;
+  }
+}

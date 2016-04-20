@@ -1,10 +1,10 @@
 <ul class="light-bar">
   {{#each lights as |light position|}}
-    <li>
-      {{light}}
+    <li class="light-bar__item">
       {{#if (eq activeLightPosition position)}}
         <div class="fa fa-star"></div>
       {{/if}}
+      <span>{{light}}</span>
     </li>
   {{/each}}
 </ul>
