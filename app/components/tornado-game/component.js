@@ -6,6 +6,7 @@ export default Ember.Component.extend({
 
   activeLightPosition: 0,
   isSpinning: false,
+  goUp: true,
 
   speed: 20,
 
@@ -15,11 +16,18 @@ export default Ember.Component.extend({
       // Wait 20ms
       yield timeout(this.speed);
       // set activeLightPosition ++
-      this.set(`activeLightPosition`, this.activeLightPosition + 1);
+      if (this.goUp) {
+        this.set(`activeLightPosition`, this.activeLightPosition + 1);
+      } else {
+        this.set(`activeLightPosition`, this.activeLightPosition - 1);
+      }
 
       // or 0 if at the end
-      if (this.activeLightPosition >= this.lights.length) {
-        this.set(`activeLightPosition`, 0);
+      if (this.activeLightPosition >= this.lights.length - 1) {
+        this.set(`goUp`, false);
+      }
+      if (this.activeLightPosition <= 0) {
+        this.set(`goUp`, true);
       }
     }
   }),
@@ -27,5 +35,12 @@ export default Ember.Component.extend({
   startSpinning() {
     this.set(`isSpinning`, true);
     this.get(`spin`).perform();
-  }
+  },
+
+  stopSpinning() {
+    this.set(`isSpinning`, false);
+    this.get(`spin`).cancelAll();
+
+    alert(`You win ${this.lights[this.activeLightPosition]} tickets`);
+  },
 });

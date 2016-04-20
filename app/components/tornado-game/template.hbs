@@ -9,4 +9,8 @@
   {{/each}}
 </ul>
 
+{{#if isSpinning}}
+<button {{action stopSpinning}}>Stop Spinning</button>
+{{else}}
 <button {{action startSpinning}}>Start Spinning</button>
+{{/if}}
