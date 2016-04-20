@@ -12,6 +12,7 @@ Router.map(function() {
   });
   this.route('arcade', function() {
     this.route('doors');
+    this.route('tornado');
   });
 });
 

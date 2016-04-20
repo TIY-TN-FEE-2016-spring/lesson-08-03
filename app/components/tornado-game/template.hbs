@@ -1,0 +1,12 @@
+<ul class="light-bar">
+  {{#each lights as |light position|}}
+    <li>
+      {{light}}
+      {{#if (eq activeLightPosition position)}}
+        <div class="fa fa-star"></div>
+      {{/if}}
+    </li>
+  {{/each}}
+</ul>
+
+<button {{action startSpinning}}>Start Spinning</button>
