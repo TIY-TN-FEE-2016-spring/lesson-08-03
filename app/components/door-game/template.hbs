@@ -1,0 +1,23 @@
+<div class="door-game">
+  {{#if gameStarted}}
+    {{#if winningDoor}}
+      <h2 class="door-game__title">Are you sure about door #{{better-door-number userChoice}}</h2>
+      <h2 class="door-game__title">We eliminated door #{{better-door-number eliminated}}</h2>
+
+      <button {{action userSwitches}}>Switch to Door #{{better-door-number switchChoice}}</button>
+      <button {{action userStays}}>Stay</button>
+    {{else}}
+      <div class="door-game__tiles">
+        <button class="door-tile" {{action userChooseDoor 0}}>Choose Me</button>
+        <button class="door-tile" {{action userChooseDoor 1}}>Choose Me</button>
+        <button class="door-tile" {{action userChooseDoor 2}}>Choose Me</button>
+      </div>
+
+      <h2 class="door-game__title">Choose Wisely</h2>
+    {{/if}}
+  {{else}}
+    <h2 class="door-game__title">Welcome!</h2>
+
+    <button class="door-game__btn" {{action toggleProperty "gameStarted"}}>Get Started</button>
+  {{/if}}
+</div>

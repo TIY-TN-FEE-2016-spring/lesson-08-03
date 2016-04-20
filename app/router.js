@@ -10,7 +10,9 @@ Router.map(function() {
     this.route('sign-up');
     this.route('login');
   });
-  this.route('arcade');
+  this.route('arcade', function() {
+    this.route('doors');
+  });
 });
 
 export default Router;
