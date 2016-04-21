@@ -1,6 +1,6 @@
 <div class="door-game">
   {{#if gameStarted}}
-    {{#if winningDoor}}
+    {{#if (not-eq winningDoor false)}}
       <h2 class="door-game__title">Are you sure about door #{{better-door-number userChoice}}</h2>
       <h2 class="door-game__title">We eliminated door #{{better-door-number eliminated}}</h2>
 

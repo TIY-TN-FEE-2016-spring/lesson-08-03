@@ -1,0 +1,30 @@
+{{#freestyle-guide
+    title='Ember Freestyle'
+    subtitle='Living Style Guide'
+}}
+
+  {{#freestyle-section name='Components' as |section|}}
+
+    {{#freestyle-subsection name='Door Game' section=section}}
+
+      {{#freestyle-usage 'door-game' title='Welcome' usageTitle='Welcome Usage'}}
+        {{door-game}}
+      {{/freestyle-usage}}
+
+      {{#freestyle-usage 'door-game-started' title='Game Has Started' usageTitle='Game Has Started Usage'}}
+        {{door-game gameStarted=true}}
+      {{/freestyle-usage}}
+
+      {{#freestyle-usage 'door-game-switch' title='Switch Should Win' usageTitle='Switch Should Win Usage'}}
+        {{door-game gameStarted=true winningDoor=0 userChoice=1 eliminated=2 switchChoice=0}}
+      {{/freestyle-usage}}
+
+      {{#freestyle-usage 'door-game-stay' title='Stay Should Win' usageTitle='Stay Should Win Usage'}}
+        {{door-game gameStarted=true winningDoor=1 userChoice=1 eliminated=2 switchChoice=0}}
+      {{/freestyle-usage}}
+
+    {{/freestyle-subsection}}
+
+  {{/freestyle-section}}
+
+{{/freestyle-guide}}

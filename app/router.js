@@ -15,6 +15,8 @@ Router.map(function() {
     this.route('tornado');
   });
   this.route('logout');
+
+  this.route('freestyle');
 });
 
 export default Router;
