@@ -1,0 +1,11 @@
+<nav>
+  <ul>
+    {{#if session.isAuthenticated}}
+      <li>{{link-to "Arcade" "arcade"}}</li>
+      <li>{{link-to "Logout" "logout"}}</li>
+    {{else}}
+      <li>{{link-to "Sign Up" "public.sign-up"}}</li>
+      <li>{{link-to "Login" "public.login"}}</li>
+    {{/if}}
+  </ul>
+</nav>
